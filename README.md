@@ -1,66 +1,62 @@
+#  POS Update Validator
 
-# POS Validator
+A Python-based tool that automatically validates Point-of-Sale (POS) system updates, identifying pricing mismatches, missing buttons, and sync issues — built to support smoother operations and reduce customer-impacting errors after menu or price changes.
 
-Its a Local PC Installation tool that validates POS updates after menu or price changes to ensure data accuracy and identify errors.
+---
 
-## Features
-- Automatically checks POS data for discrepancies.
-- Reports any errors or unchanged data after updates.
-- Generates user-friendly reports that are store in the computer
-- Automatically sends incident reports to IT teams by email.
-- Easy to integrate with existing POS systems.
+##  The Problem
 
-## Installation
+After POS system updates (especially using Xenial), restaurants and retail locations often encounter:
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/POS-Validator.git
-   ```
+- ❌ Items showing as $0.00
+- ❌ Missing or broken menu buttons
+- ❌ Inconsistent pricing across terminals
+- ❌ Modifiers not stacking correctly
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt  # If Python
-   ```
+These issues delay service, frustrate staff, and damage customer trust. Manual post-update checks are time-consuming, inconsistent, and reactive.
 
-3. Run the tool:
-   ```bash
-   python pos.py  # Example for Python project
-   ```
+---
 
-## Usage
-1.	The tool is installed as a local application or script (e.g., Python script with a simple UI or batch/PowerShell automation).
-2.	It runs manually by staff or automatically using Windows Task Scheduler (e.g., every day at 6 AM, post-deployment, or during store open hours).
-3.	It reads POS data from local files or terminals and performs validation checks.
+##  My Solution
 
-## Manually 
-Step 1:
+I developed a **POS Update Validator** that automates post-update validation by comparing the expected menu structure with the live POS data. It scans for common update failures and provides a clean, actionable report.
 
-📁 POS_Menu_Validator/
-├── pos.py       ← The main Python script
-├── expected_menu.json          ← Pulled from backend or created manually.
-├── live_menu.json              ← Exported or scraped from POS.
-└── logs/
-    └── report_YYYY-MM-DD.txt   ← Auto-generated after each run.
+###  Key Features
+- Scans JSON-based POS menu files
+- Identifies missing prices, button mismatches, and sync failures
+- Outputs a clear CLI report (optional CSV/TXT log)
+- Supports local PC deployment or scheduled automatic runs
+- Prototype built for real-world use in a fast-paced restaurant setting
 
+---
 
- Step 2: Install Python (if not installed)
-If the PC doesn’t already have Python:
-1. Download from https://www.python.org/downloads/
-2. During installation: ✔ check “Add Python to PATH”
+##  How It Works
 
+1. **Inputs**
+   - `expected_menu.json`: Pulled from Xenial backend (or created manually)
+   - `live_menu.json`: Exported from store-level POS system
+2. **Comparison Logic**
+   - Matches items by name or ID
+   - Flags pricing mismatches, missing buttons, and $0.00 entries
+3. **Output**
+   - CLI summary
+   - Optional text or CSV report saved in a `/logs` folder
 
-Step 3: Run the Software
-1.	Open Command Prompt
-2.	Navigate to your folder:
-```bash
-cd Desktop\POS
-```
+---
 
-3.	Run the script:
-```Bash
-python pos.py
-```
- 
+## Deployment Options
+
+### Local PC (Prototype 1)
+- Runs on Windows machines with Python 3
+- Configurable via Task Scheduler (e.g., run daily at 5 AM)
+- Offline compatible for in-store use
+
+### (Future) Cloud Server
+- Real-time, multi-store monitoring
+- Central logging, dashboards, and alerts
+
+---
+
 ________________________________________
 
 

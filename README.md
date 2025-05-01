@@ -57,6 +57,26 @@ I developed a **POS Update Validator** that automates post-update validation by 
 
 ---
 
+## Usage 
+### Step 1
+
+ **Clone the Repository**
+```bash
+git clone https://github.com/ochris54/POS-Validator.git
+cd POS-Validator
+```
+ ### Step 2
+Install Python (if not installed) Download Python 3 and check “Add to PATH”
+
+ ### Step 3
+Prepare Menu Files Place your expected_menu.json and live_menu.json files in the project folder.
+### Step 4
+Run the Validator
+ ```bash
+python pos.py
+ ```
+
+
 ________________________________________
 
 

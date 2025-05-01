@@ -1,0 +1,7 @@
+POS Update Check Report
+Date: 2025-04-24
+
+❌ Teen Burger is priced at $0.00 in live POS
+❌ Beyond Meat Burger is priced at $0.00 in live POS
+⚠️ Poutine expected $4.49, but live POS has $4.99
+⚠️ Mama Burger Combo expected $9.99, but live POS has $10.99
